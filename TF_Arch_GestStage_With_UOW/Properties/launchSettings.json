@@ -1,0 +1,28 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:58699",
+      "sslPort": 44354
+    }
+  },
+  "profiles": {
+    "TF_Arch_GestStage_With_UOW": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7121;http://localhost:5132",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

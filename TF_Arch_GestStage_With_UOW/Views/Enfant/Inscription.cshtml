@@ -1,0 +1,49 @@
+﻿@model TF_Arch_GestStage_With_UOW.Models.Forms.InscriptionForm
+
+@{
+    ViewData["Title"] = "Inscription";
+}
+
+<h1>Inscription</h1>
+
+<h4>InscriptionForm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Inscription">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prenom" class="control-label"></label>
+                <input asp-for="Prenom" class="form-control" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StageId" class="control-label"></label>
+                <select name="StageId" class="form-control">
+                    <option value="0" >--- Sélectionnez un stage ---</option>
+                    @foreach(Stage stage in Model.Stages)
+                    {
+                        <option value="@stage.Id">@stage.Titre</option>
+                    }
+                </select>
+                <span asp-validation-for="StageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

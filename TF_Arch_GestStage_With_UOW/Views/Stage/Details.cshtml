@@ -1,0 +1,48 @@
+﻿@model DisplayStageDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DisplayStageDetails</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach(Enfant enfant in Model.Enfants)
+            {
+                <tr>
+                    <td>@enfant.Id</td>
+                    <td>@enfant.Nom</td>
+                    <td>@enfant.Prenom</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
